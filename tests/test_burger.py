@@ -3,7 +3,6 @@
 import pytest
 
 from praktikum.burger import Burger
-from praktikum.bun import Bun
 from praktikum.ingredient import Ingredient
 
 
@@ -11,38 +10,6 @@ class TestBurger:
     """
     Набор тестов для класса Burger
     """
-
-    @pytest.fixture
-    def bun(self):
-        """
-        Фикстура, создающая тестовую булочку для бургера
-        """
-        return Bun("white bun", 100.0)
-
-    @pytest.fixture
-    def ingredient_sauce(self):
-        """
-        Фикстура, создающая тестовый ингредиент - соус
-        """
-        return Ingredient("SAUCE", "hot sauce", 90.0)
-
-    @pytest.fixture
-    def ingredient_filling(self):
-        """
-        Фикстура, создающая тестовый ингредиент - начинку
-        """
-        return Ingredient("FILLING", "cheese", 200.0)
-
-    @pytest.fixture
-    def burger_with_ingredients(self, bun, ingredient_sauce, ingredient_filling):
-        """
-        Создает бургер с булочкой и двумя ингредиентами (соус и начинка) для тестирования
-        """
-        burger = Burger()
-        burger.set_buns(bun)
-        burger.add_ingredient(ingredient_sauce)
-        burger.add_ingredient(ingredient_filling)
-        return burger
 
     def test_set_buns(self, bun):
         """Проверка установки булочки в бургер"""
