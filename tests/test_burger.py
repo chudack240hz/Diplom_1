@@ -116,7 +116,6 @@ class TestBurger:
 
     def test_move_nonexistent_ingredient(self, burger_with_ingredients):
         """Проверка обработки попытки перемещения несуществующего ингредиента"""
-        # Сохраняем начальное состояние
         initial_ingredients = burger_with_ingredients.ingredients.copy()
         
         with pytest.raises(IndexError):
